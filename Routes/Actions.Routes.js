@@ -11,7 +11,7 @@ const {
   BEU_URL,
 } = require("../Config/");
 
-router.get("/sim_frontend", async (req, res, next) => {
+router.post("/sim_frontend", async (req, res, next) => {
   try {
     const { action, workflow_run, repository, sender } = req.body;
     const sending = await response(
@@ -30,7 +30,7 @@ router.get("/sim_frontend", async (req, res, next) => {
   }
 });
 
-router.get("/beu_admin", async (req, res, next) => {
+router.post("/beu_admin", async (req, res, next) => {
   try {
     const { action, workflow_run, repository, sender } = req.body;
     const sending = await response(
